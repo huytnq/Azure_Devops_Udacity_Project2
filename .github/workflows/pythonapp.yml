@@ -1,9 +1,6 @@
 name: Python application test with Github Actions
 
-on: 
-  push:
-    branches:
-      - '*'
+on: [push]
 
 jobs:
   build:
@@ -19,6 +16,6 @@ jobs:
     - name: Install dependencies
       run: |
         make install
-    - name: Lint with pylint
+    - name: Test with pylint
       run: |
-        make lint
+        make test
