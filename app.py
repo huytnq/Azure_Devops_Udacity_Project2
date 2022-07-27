@@ -6,8 +6,6 @@ import pandas as pd
 from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
-# GET_PASSES_THIS_REPO_UDACITY_PLEASE
-
 app = Flask(__name__)
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
@@ -20,10 +18,9 @@ def scale(payload):
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
 
-# GET_PASSES_THIS_REPO_UDACITY_PLEASE 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = "<h2> Sklearn Prediction Home APP - REST API</h2>"    
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -72,4 +69,4 @@ def predict():
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000, debug=True)
