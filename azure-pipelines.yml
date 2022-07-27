@@ -7,6 +7,7 @@
 trigger:
 - main
 
+
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: 'cc603515-3a5b-46e5-a1d4-5ec264534315'
@@ -47,6 +48,13 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
+      
+    - script: |
+        export PATH=$HOME/.local/bin:$PATH
+        make install
+        make lint
+      workingDirectory: $(projectRoot)
+      displayName: 'Run lint tests'   
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
