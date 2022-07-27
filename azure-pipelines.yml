@@ -52,7 +52,7 @@ stages:
     - script: |
         export PATH=$HOME/.local/bin:$PATH
         make install
-        make lint
+        make test
       workingDirectory: $(projectRoot)
       displayName: 'Run lint tests'   
 
