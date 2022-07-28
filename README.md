@@ -134,8 +134,8 @@ You can then watch the load test:
 
 ## GET_PASSES_THIS_REPO_UDACITY_PLEASE 
 ## Demo 
-
-A ![Demo](https://www.youtube.com/watch?v=s3KX6pqJj8A&ab_channel=HuyTNQ)
+Youtube video demo 
+https://www.youtube.com/watch?v=s3KX6pqJj8A&ab_channel=HuyTNQ
 
 
 
