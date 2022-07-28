@@ -13,13 +13,13 @@ variables:
   azureServiceConnectionId: 'cc603515-3a5b-46e5-a1d4-5ec264534315'
 
   # Web app name
-  webAppName: 'huytnq1-ml-app'
+  webAppName: 'huytnq1-ml-pythonapp'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'huytnq1-ml-app'
+  environmentName: 'huytnq1-ml-pythonapp'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -89,7 +89,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : huytnq1-ml-app'
+            displayName: 'Deploy Azure Web App : huytnq1-ml-pythonapp'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
