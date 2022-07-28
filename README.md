@@ -13,7 +13,7 @@ Once anything has been changed (commits) in the github repositry, it will trigge
 
 ## Project Plan
 
-A [Trello](https://trello.com/b/xtbJ4xMa/building-a-ci-cd-pipeline-udacity-project) board has been created to keep track of the tasks.
+A [Trello](https://trello.com/b/CSY4dyDy/building-a-ci-cd-pipeline-udacity) board has been created to keep track of the tasks.
 
 A [spreadsheet](project-schedule-h.xlsx) has been created to manage the project schedule.
 
