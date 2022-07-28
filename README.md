@@ -13,49 +13,49 @@ Once anything has been changed (commits) in the github repositry, it will trigge
 
 ## Project Plan
 
-A [Trello](https://trello.com/b/xtbJ4xMa/building-a-ci-cd-pipeline-udacity-project) board has been created to keep track of the tasks.
+A [Trello](https://trello.com/b/CSY4dyDy/building-a-ci-cd-pipeline-udacity) board has been created to keep track of the tasks.
 
 A [spreadsheet](project-schedule-h.xlsx) has been created to manage the project schedule.
 
 ## Instructions
 
 Here is an architectural diagram:
-![arch diagram](https://user-images.githubusercontent.com/43758373/104777577-f016dc00-578c-11eb-82f7-f6da3ba19f5c.PNG)
+![arch diagram](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/ArchitechturalDiagram.PNG)
 
 ## Deploy the app in Azure Cloud Shell
 
 In Azure Cloud Shell, clone the repo:
 ```
-git clone git@github.com:Haneen-97/udacity-azure-cicd.git
+git clone git@github.com:huytnq/Azure_Devops_Udacity_Project2.git
 ```
-![screenshot-gitClone-AzureCloud](https://user-images.githubusercontent.com/43758373/104778534-8c8dae00-578e-11eb-9b3f-fbd59bde16fd.PNG)
+![screenshot-gitClone-AzureCloud](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Clone_Project.PNG)
 
 Create a virtual environment:
 ```
-python3 -m venv ~/.myrepo
+python3 -m venv ~/.AzureDevops
 ```
 
 Activate the virtual environment:
 ```
-source ~/.myrepo/bin/activate
+source ~/.AzureDevops/bin/activate
 ```
 
 Change into the new directory:
 ```
-cd udacity-azure-cicd
+cd Azure_Devops_Udacity_Project2
 ```
 
 Install dependencies in the virtual environment and run tests:
 ```
 make all
 ```
-![make-all](https://user-images.githubusercontent.com/43758373/104778690-d5456700-578e-11eb-8159-63181a2c61c0.PNG)
-![make-all2](https://user-images.githubusercontent.com/43758373/104778688-d4acd080-578e-11eb-9bde-f13800ba9c31.PNG)
-![make-all3](https://user-images.githubusercontent.com/43758373/104778685-d4143a00-578e-11eb-924d-5c4c813f2f01.PNG)
-![make-all4](https://user-images.githubusercontent.com/43758373/104778682-d37ba380-578e-11eb-836d-8e9bc715f55c.PNG)
+![make-all](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All.PNG)
+![make-all2](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All2.PNG)
+![make-all3](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All3.PNG)
+![make-all4](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_All4.PNG)
 
 A successful GitHub build test 
-![screenshot-build-success-actiongithub](https://user-images.githubusercontent.com/43758373/104843616-9ae9e000-58dc-11eb-8b4b-9e1a2628cd4d.PNG)
+![screenshot-build-success-actiongithub](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Github_CI_Build.PNG)
 
 ## Deploy the app to an Azure App Service
 
@@ -63,7 +63,7 @@ Create an App Service in Azure. In this example the App Service is cicd-nanodegr
 In the Azure cloudShell type:
 
 ```
-az webapp up -n cicd-nanodegree-haneen -g flask-app
+az webapp up -n huytnq1-ml-pythonapp -location eastus
 ```
 
 Next, create the pipeline in Azure DevOps. More information on this process can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops&WT.mc_id=udacity_learn-wwl). The basic steps to set up the pipeline are:
@@ -75,11 +75,11 @@ Next, create the pipeline in Azure DevOps. More information on this process can 
 
 Screenshot of the App Service in Azure:
 
-![screenshot-webapp-service](https://user-images.githubusercontent.com/43758373/104779603-6a952b00-5790-11eb-9f6a-6a31b506364c.PNG)
+![screenshot-webapp-service](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Service.PNG)
 
 Screenshot of a successful deployment of the project in Azure Pipelines:
 
-![screenshot-azure-pipeline-deployment](https://user-images.githubusercontent.com/43758373/104779545-55200100-5790-11eb-9dd8-ca3e0153e3df.PNG)
+![screenshot-azure-pipeline-deployment](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Azure_Pipelines.PNG)
 
 To test the app running in Azure App Service, edit line 28 of the make_predict_azure_app.sh script with the DNS name of your app. Then run the script:
 ```
@@ -88,18 +88,18 @@ To test the app running in Azure App Service, edit line 28 of the make_predict_a
 
 If it's working you should see the following output:
 
-![screenshot-prediction](https://user-images.githubusercontent.com/43758373/104778892-2ce3d280-578f-11eb-8441-51b95f34f267.PNG)
+![screenshot-prediction](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/Make_Predict.PNG)
 
 You can also visit the URL of the App Service via the browser and you should see the following page:
 
-![screenshot-browser](https://user-images.githubusercontent.com/43758373/104779465-36216f00-5790-11eb-8561-2869ad9dd09d.PNG)
+![screenshot-browser](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Service_URL.PNG)
 
 View the app logs:
 
-in the browser bar type: https://<app-name>.scm.azurewebsites.net/api/logs/docker
+in the browser bar type: https://huytnq1-ml-pythonapp.scm.azurewebsites.net/api/logs/docker
 
 
-![screenshot-log-webapp](https://user-images.githubusercontent.com/43758373/104779427-2a35ad00-5790-11eb-8da3-69c7bc269d51.PNG)
+![screenshot-log-webapp](https://raw.githubusercontent.com/huytnq/Azure_Devops_Udacity_Project2/main/Screenshot/App_Logs.PNG)
 
 
 > 
